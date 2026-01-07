@@ -1,10 +1,14 @@
 import notesDB from "../db/notesDB.js"
 export async function deleteNotes(id,username){
-    for(let i= 0;i<notesDB.length;i++){
+    try{for(let i= 0;i<notesDB.length;i++){
         if(notesDB[i].id===id&&notesDB[i].username===username){
             notesDB.splice(i,1)
         }
     }
-    return notesDB
+    return notesDB}
+    catch{
+        console.error(error);
+        
+    }
 }
 
