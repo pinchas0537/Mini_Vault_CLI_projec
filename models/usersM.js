@@ -1,5 +1,5 @@
 import { nanoid } from "nanoid"
-import { Note } from "./notesM"
+import { Note } from "./notesM.js"
 
 export class Users {
     constructor(username, password) {
