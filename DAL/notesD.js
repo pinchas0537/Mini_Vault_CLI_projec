@@ -9,29 +9,31 @@ export async function deleteNotes(id, username) {
             }
         }
         return notesDB
-    }catch(error){
+    } catch (error) {
         console.error(error)
     }
 
-    }
-
-
-export async function listByOwner(username){
+export async function listByOwner(username) {
     try {
         const ListOfNotes = notesDB.forEach(element => {
             element.username === username;
         });
         return ListOfNotes;
-    } catch (err) {
-        return a.message;}}
+    } catch (error) {
+        console.error(error);
+    }
+}
 
-export async function listNotes(ownerUsername){
-    try{
-        if(typeof(ownerUsername)===String){
-        return ownerUsername
-    }else{
-        console.log("The ownerUsername not string.")
-    }}catch{error}{
+
+
+export async function listNotes(ownerUsername) {
+    try {
+        if (typeof (ownerUsername) === String) {
+            return ownerUsername
+        } else {
+            console.log("The ownerUsername not string.")
+        }
+    } catch { error } {
         console.error(error)
     }
 }
@@ -44,5 +46,3 @@ export function add(note = {}) {
         console.error(error)
     }
 }
-
-
