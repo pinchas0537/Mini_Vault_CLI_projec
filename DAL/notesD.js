@@ -44,5 +44,16 @@ export async function findhByUsername(username){
     }
 }
 
+export async function listNotes(ownerUsername){
+    try{
+        if(typeof(ownerUsername)===String){
+        return ownerUsername
+    }else{
+        console.log("The ownerUsername not string.")
+    }}catch{error}{
+        console.error(error)
+    }
+}
+
 
 
