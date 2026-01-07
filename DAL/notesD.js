@@ -1,4 +1,5 @@
 import notesDB from "../db/notesDB.js"
+import usersDB from "../db/usersDB.js"
 export async function deleteNotes(id,username){
     try{for(let i= 0;i<notesDB.length;i++){
         if(notesDB[i].id===id&&notesDB[i].username===username){
@@ -13,3 +14,16 @@ export async function deleteNotes(id,username){
     }
 }
 
+export async function existsUser(username) {
+    try{
+        var search=false
+        for(let i=0;i<usersDB.length;i++){
+            if(usersDB[i].username===username){
+                search=true
+            }
+        }
+        return search
+    }catch{
+        console.error(error)
+    }
+}
