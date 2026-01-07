@@ -15,12 +15,13 @@ export class Users {
             id: this.id,
             username: this.username,
             password: this.password,
-            createdAt: this.createdAt
+            createdAt: this.createdAt,
+            notes: this.notes
         }
     }
     genarateNote(num = 2) {
         for (let i = 0; i < num; i++) {
-            const element = new Note (this.username, `Example: `)
+            const element = new Note(this.username, `Example: `)
             this.notes.push(element)
         }
     }
