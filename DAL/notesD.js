@@ -5,5 +5,6 @@ export async function deleteNotes(id,username){
             notesDB.splice(i,1)
         }
     }
+    return notesDB
 }
 
