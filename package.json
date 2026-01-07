@@ -2,7 +2,7 @@
   "name": "library_project",
   "version": "1.0.0",
   "description": "**Make sure to commit clearly!!**",
-  "main": "index.js",
+  "main": "app.js",
   "directories": {
     "test": "test"
   },
@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/pinchas0537/library_project/issues"
   },
-  "homepage": "https://github.com/pinchas0537/library_project#readme"
+  "homepage": "https://github.com/pinchas0537/library_project#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
 }
