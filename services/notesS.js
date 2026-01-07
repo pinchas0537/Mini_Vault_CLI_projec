@@ -1,6 +1,6 @@
-import { add, listByOwner } from "../DAL/notesD.js"
+import { deleteNotes, existsNote, add, listByOwner } from "../DAL/notesD.js"
 import { Note } from "../models/notesM.js"
-import { listByOwner } from "../DAL/notesD.js"
+import { existsUser } from "../DAL/usersD.js";
 
 export function listNotes(ownerUsername) {
     try {
@@ -12,6 +12,18 @@ export function listNotes(ownerUsername) {
         }
     } catch { error } {
         console.error(error)
+    }
+}
+
+export function deleteNote(ownerUsername, noteId) {
+    try {
+        if (existsUser(ownerUsername) && existsNote(noteId)) {
+            deleteNotes(ownerUsername, noteId)
+            return true
+        }
+        return false
+    } catch (err) {
+        console.log(err)
     }
 }
 
