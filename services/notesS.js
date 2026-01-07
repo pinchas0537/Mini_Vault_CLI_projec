@@ -1,4 +1,5 @@
-import {listByOwner} from "../DAL/notesD.js"
+import {add,listByOwner} from "../DAL/notesD.js"
+import {Note} from "../models/notesM.js"
 export async function listNotes(ownerUsername){
     try{
         if(typeof(ownerUsername)==="string"){
@@ -12,14 +13,11 @@ export async function listNotes(ownerUsername){
 }
 
 
-// export function addNote(ownerUsername, text){
-//     const new_date=new Date()
-//     const new_note=new Notes{
-//         id:id,
-//         ownerUsername:ownerUsername,
-//         text: text,
-//         createdAt:`${new_date.getDate()}/${new_date.getMonth()+1}/${new_date.getFullYear()}`
-//     }
-//     if()
-//     const insert=add(new_note)
-//     console.log("The note is added.")
+export function addNote(ownerUsername, text){
+    const new_note=new Note(
+        ownerUsername,
+        text)
+    const insert=add(new_note)
+    return insert
+}
+
