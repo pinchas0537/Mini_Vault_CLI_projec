@@ -55,7 +55,7 @@ Logout & Exit = 4
     switch (click) {
         case '1':
             const new_username = readlineSync.question(`enter user name: `)
-            const new_text = readlineSync.question(`enter user password: `)
+            const new_text = readlineSync.question(`enter text: `)
             const new_note = addNote(new_username, new_text)
             if (new_note === undefined) {
                 console.log("not success")
