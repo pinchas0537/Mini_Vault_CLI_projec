@@ -10,6 +10,18 @@ export async function deleteNotes(id, username) {
         }
         return notesDB
     }
+
+    }
+}
+
+export async function listByOwner(username) {
+    try {
+        const ListOfNotes = notesDB.forEach(element => {
+            element.username === username;
+        });
+        return ListOfNotes;
+    } catch (err) {
+        return a.message;
     catch (error) {
         console.error(error);
     }
