@@ -25,11 +25,9 @@ export function listByOwner(username) {
     }
 }
 
-
-
 export function listNotes(ownerUsername) {
     try {
-        if (typeof (ownerUsername) === String) {
+        if (typeof (ownerUsername) === "string") {
             return ownerUsername
         } else {
             console.log("The ownerUsername not string.")

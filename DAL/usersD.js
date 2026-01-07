@@ -11,7 +11,7 @@ export function add(user) {
 
 export function existsUser(username) {
     try {
-        var search = false
+        let search = false
         for (let i = 0; i < usersDB.length; i++) {
             if (usersDB[i].username === username) {
                 search = true
@@ -23,9 +23,9 @@ export function existsUser(username) {
     }
 }
 
-export function findhByUsername(username) {
+export function findByUsername(username) {
     try {
-        var search_user = true
+        let search_user = true
         for (let i = 0; i < usersDB.length; i++) {
             if (usersDB[i].username === username) {
                 search_user = usersDB[i]
