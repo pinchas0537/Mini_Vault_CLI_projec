@@ -1,8 +1,10 @@
-import { deleteNotes, existsNote, listByOwner } from "../DAL/notesD.js"
+import { deleteNotes, existsNote, add, listByOwner } from "../DAL/notesD.js"
+import { Note } from "../models/notesM.js"
 import { existsUser } from "../DAL/usersD.js";
-export async function listNotes(ownerUsername) {
+
+export function listNotes(ownerUsername) {
     try {
-        if (typeof (ownerUsername) === String) {
+        if (typeof (ownerUsername) === "string") {
             const listNotes_by_username = listByOwner(ownerUsername)
             return listNotes_by_username
         } else {
@@ -23,4 +25,12 @@ export function deleteNote(ownerUsername, noteId) {
     } catch (err) {
         console.log(err)
     }
+}
+
+export function addNote(ownerUsername, text) {
+    const new_note = new Note(
+        ownerUsername,
+        text)
+    const insert = add(new_note)
+    return insert
 }
